@@ -8,7 +8,7 @@ public class RegistryTest {
     private Registry registry = new Registry();
 
     @Test
-    public void validateRegistryResult() {
+    public void validateRegistryResult() { 
 
         Person person = new Person();
 

@@ -1,9 +1,37 @@
 package edu.eci.cvds.tdd.registry;
 
-public class Registry {
-    public RegisterResult registerVoter(Person p) {
+import java.util.TreeMap; 
 
-        // TODO Validate person and return real result.
-        return RegisterResult.VALID;
+public class Registry {
+	/**
+	 * TreeMap with registered users.
+	 */
+	
+	TreeMap<Integer, Person> register = null ;
+		
+	public RegisterResult registerVoter(Person p) {
+    	
+    	RegisterResult result = null;
+    	
+    	if ((Integer)(p.getAge()) == null || p.getAge()<0  ) { 
+    		result =  RegisterResult.INVALID_AGE;
+    	}
+    	else if (p.getAge()<18 && p.getAge()>0 ) {
+    		result = RegisterResult.UNDERAGE;
+    	}
+    	
+    	else if (register.containsKey( (Integer)(p.getId()) ) ) {
+    		result = RegisterResult.DUPLICATED;
+    	}
+  
+    	else if (p.getAge()>=18 && p.isAlive() ) {
+    		result = RegisterResult.VALID;
+    		register.put((Integer)(p.getAge()), p);
+    		 
+    	}
+    	
+    	
+    	return result;
+    	
     }
 }
