@@ -8,11 +8,11 @@
 
 Con base a los resultados se tiene:
 
-- Dead : Cuando el atributo alive es false.
-- Underage : Rango de edad en : 0 < edad < 18
-- Invalid_Age: Cuando la edad es menor a 0: edad < 0
-- Valid : Cuando el atributo alive es true, no ha sido registrado anteriormente y el rango de edad es : 17 < edad
-- Duplicated : Cunado ya ha sido registrado como un voto válido anteriormente.
+- **Dead** : Cuando el atributo alive es false.
+- **Underage** : Rango de edad en : 0 < edad < 18
+- **Invalid_Age** : Cuando la edad es menor a 0: edad < 0
+- **Valid** : Cuando el atributo alive es true, no ha sido registrado anteriormente y el rango de edad es : 17 < edad
+- **Duplicated** : Cunado ya ha sido registrado como un voto válido anteriormente.
 
 ## Clases de equivalencia para la clase CalculadorDescuentos:
 
