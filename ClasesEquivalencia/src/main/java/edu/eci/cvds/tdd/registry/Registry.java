@@ -1,5 +1,4 @@
 package edu.eci.cvds.tdd.registry;
-
 import java.util.TreeMap; 
 
 public class Registry {
@@ -7,7 +6,7 @@ public class Registry {
 	 * TreeMap with registered users.
 	 */
 	
-	TreeMap<Integer, Person> register = null ;
+	TreeMap<Integer, Person> register = new TreeMap<Integer,Person>();
 		
 	public RegisterResult registerVoter(Person p) {
     	
@@ -20,16 +19,17 @@ public class Registry {
     		result = RegisterResult.UNDERAGE;
     	}
     	
-    	else if (register.containsKey( (Integer)(p.getId()) ) ) {
+    	else if (register.containsKey( (Integer)(p.getId())) ) {
     		result = RegisterResult.DUPLICATED;
-    	}
-  
-    	else if (p.getAge()>=18 && p.isAlive() ) {
-    		result = RegisterResult.VALID;
-    		register.put((Integer)(p.getAge()), p);
-    		 
+    	} 
+    	else if (!p.isAlive()) {
+    		result = RegisterResult.DEAD;
     	}
     	
+    	else if (p.getAge()>=18 && p.isAlive()) {
+    		result = RegisterResult.VALID;
+    		register.put((Integer)(p.getId()), p);
+    	}
     	
     	return result;
     	
