@@ -4,6 +4,9 @@
  - Camilo Andrés Pichimata Cárdenas
  - Zuly Valentina Vargas Ramirez
 
+## Comando para ejecutar las pruebas:
+ mvn - U package
+
 ## Clases de equivalencia para la clase Registry:
 
 Con base a los resultados se tiene:
